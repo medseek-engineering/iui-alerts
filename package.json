@@ -1,6 +1,6 @@
 {
   "name": "iui-alerts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Angular alert service",
   "main": "./lib/index.js",
   "private": false,
