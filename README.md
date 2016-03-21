@@ -5,6 +5,9 @@
 
 ## Changelog
 
+### 1.0.3
+- Performance improvements for apps using `conf.client.head.addlPathedScripts`
+
 ### 1.0.2
 - allows for a custom alert template
 - moved alert variables to constant/value services
