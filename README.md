@@ -5,6 +5,9 @@
 
 ## Changelog
 
+### 1.0.4
+- removing app.root from the directive template definition
+
 ### 1.0.3
 - Performance improvements for apps using `conf.client.head.addlPathedScripts`
 
