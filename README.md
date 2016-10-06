@@ -5,6 +5,9 @@
 
 ## Changelog
 
+### 1.0.5
+- allowing custom template with templateUrl param
+
 ### 1.0.4
 - removing app.root from the directive template definition
 
