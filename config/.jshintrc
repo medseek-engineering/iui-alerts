@@ -4,7 +4,7 @@
     "curly": true,
     "eqeqeq": true,
     "indent": 2,
-    "latedef": true,
+    "latedef": false,
     "node": true,
     "jquery": true,
     "browser": true,

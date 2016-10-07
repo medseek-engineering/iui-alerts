@@ -1,5 +1,20 @@
 <div 
-  ng-if="placementAlerts.alert.message" 
-  class="alert-wrapper"
-  ng-include="placementAlerts.alert.template || iuiAlertsConfig.defaultAlertTemplate">
+  ng-if="alertPlaceholder.alerts.alert.message" 
+  class="alert-wrapper">
+  <div 
+    class="alert alert-{{alertPlaceholder.alerts.alert.type}}" 
+    ng-class="{'alert-dismissible': alertPlaceholder.alerts.alert.canClose}"
+    role="alert">
+    <button 
+      ng-if="alertPlaceholder.alerts.alert.canClose"
+      type="button" 
+      class="close" 
+      aria-label="{{alertPlaceholder.labels.close}}" 
+      ng-click="alertPlaceholder.closeAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div
+      class="alert-message"
+      ng-include="alertPlaceholder.alerts.alert.templateUrl"></div>
+  </div>
 </div>

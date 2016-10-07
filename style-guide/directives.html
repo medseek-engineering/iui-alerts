@@ -79,6 +79,11 @@ This prefix allows us to easily identify alerts in the codebase</p><p class="sty
   </button>
   <button 
     class="btn btn-default" 
+    ng-click="alertMain.iuiAlertService.add('alert_appTop', { type: 'success', canClose: true, message: 'Pardon me while I get my shoe phone.', templateUrl: '/custom-template-url.html'})">
+    Trigger App Top Custom Template Alert Success
+  </button>
+  <button 
+    class="btn btn-default" 
     ng-click="alertMain.iuiAlertService.clear('alert_exampleArea')">
     Hide Example Area Alert
   </button>
@@ -106,6 +111,11 @@ This prefix allows us to easily identify alerts in the codebase</p><p class="sty
   <span class="nt">&lt;/button&gt;</span>
   <span class="nt">&lt;button</span> 
     <span class="na">class=</span><span class="s">"btn btn-default"</span> 
+    <span class="na">ng-click=</span><span class="s">"alertMain.iuiAlertService.add('alert_appTop', { type: 'success', canClose: true, message: 'Pardon me while I get my shoe phone.', templateUrl: '/custom-template-url.html'})"</span><span class="nt">&gt;</span>
+    Trigger App Top Custom Template Alert Success
+  <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;button</span> 
+    <span class="na">class=</span><span class="s">"btn btn-default"</span> 
     <span class="na">ng-click=</span><span class="s">"alertMain.iuiAlertService.clear('alert_exampleArea')"</span><span class="nt">&gt;</span>
     Hide Example Area Alert
   <span class="nt">&lt;/button&gt;</span>
@@ -118,13 +128,19 @@ This prefix allows us to easily identify alerts in the codebase</p><p class="sty
     </div>
   </div>
 </div>
-<script>app.controller('AlertController', ['iuiAlertService', function(iuiAlertService) {
+<script>app.run(['$templateCache', function($templateCache) {
+  $templateCache.put('/custom-template-url.html', '{{alertPlaceholder.alerts.alert.message}} <a href="">View the Shoe Phone</a> ');
+}]);
+app.controller('AlertController', ['iuiAlertService', function(iuiAlertService) {
   this.iuiAlertService = iuiAlertService;
 }]);
 </script>
 <div class="codeBlock jsExample">
   <div class="highlight">
-    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'AlertController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'iuiAlertService'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iuiAlertService</span><span class="p">)</span> <span class="p">{</span>
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">run</span><span class="p">([</span><span class="s1">'$templateCache'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$templateCache</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$templateCache</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">'/custom-template-url.html'</span><span class="p">,</span> <span class="s1">'{{alertPlaceholder.alerts.alert.message}} &lt;a href=""&gt;View the Shoe Phone&lt;/a&gt; '</span><span class="p">);</span>
+<span class="p">}]);</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'AlertController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'iuiAlertService'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iuiAlertService</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">iuiAlertService</span> <span class="o">=</span> <span class="nx">iuiAlertService</span><span class="p">;</span>
 <span class="p">}]);</span></pre>
   </div>
