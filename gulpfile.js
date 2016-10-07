@@ -46,7 +46,7 @@ gulp.task('test', ['lint'], function (done) {
   'use strict';
   karma.start({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    singleRun: false
   }, done);
 });
 
@@ -56,7 +56,7 @@ gulp.task('createTemplates', function(cb){
   gulp.src(templateFiles)
     .pipe(ngHtml2Js({
       base: base,
-      moduleName: 'iui.alertTemplates',
+      moduleName: 'iui.alerts',
       prefix: '/$iui-alerts/'
     }))
     .pipe(gulpConcat(templateFile))

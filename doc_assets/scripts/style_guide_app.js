@@ -1,4 +1,4 @@
-var app = angular.module('styleGuideApp', ['iui.alertModule']);
+var app = angular.module('styleGuideApp', ['iui.alerts']);
 app.root = '/';
 
 app.controller('SGMainCtrl', ['$scope', '$location', '$anchorScroll', '$window', function(scope, $location, $anchorScroll, $window) {

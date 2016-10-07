@@ -5,8 +5,10 @@
 
 ## Changelog
 
-### 1.0.5
+### 1.0.6
 - allowing custom template with templateUrl param
+- removed ui-core dependencies
+- consolidated module structure down to iui.alerts 
 
 ### 1.0.4
 - removing app.root from the directive template definition
