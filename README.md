@@ -5,6 +5,9 @@
 
 ## Changelog
 
+## 1.0.8
+- changing build process
+
 ### 1.0.6
 - allowing custom template with templateUrl param
 - removed ui-core dependencies
