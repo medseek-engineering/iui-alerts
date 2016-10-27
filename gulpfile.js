@@ -46,7 +46,7 @@ gulp.task('test', ['lint'], function (done) {
   'use strict';
   karma.start({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: false
+    singleRun: true
   }, done);
 });
 
